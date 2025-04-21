@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 150 30% 98%;
+    --foreground: 160 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 160 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 84% 4.9%;
+    --primary: 142 70% 45%;
+    --primary-foreground: 355 100% 100%;
+    --secondary: 160 84% 39%;
+    --secondary-foreground: 355 100% 100%;
+    --muted: 142 30% 96.1%;
+    --muted-foreground: 142 16.3% 46.9%;
+    --accent: 142 40% 96.1%;
+    --accent-foreground: 142 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 142 31.8% 91.4%;
+    --input: 142 31.8% 91.4%;
+    --ring: 142 70% 45%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 160 40% 8%;
+    --foreground: 142 40% 98%;
+    --card: 160 40% 8%;
+    --card-foreground: 142 40% 98%;
+    --popover: 160 40% 8%;
+    --popover-foreground: 142 40% 98%;
+    --primary: 142 70% 45%;
+    --primary-foreground: 144 40% 10%;
+    --secondary: 160 84% 39%;
+    --secondary-foreground: 355 100% 100%;
+    --muted: 142 32.6% 17.5%;
+    --muted-foreground: 142 20.2% 65.1%;
+    --accent: 142 32.6% 17.5%;
+    --accent-foreground: 142 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 142 32.6% 17.5%;
+    --input: 142 32.6% 17.5%;
+    --ring: 142 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.clip-path-diagonal {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 95%);
+}
+
+.scroll-section-transition {
+  @apply transition-all duration-500 ease-in-out;
+}
+
+.hero-gradient {
+  @apply bg-gradient-to-r from-primary-600 via-secondary-500 to-primary-700;
+}
+
+.waitlist-input {
+  @apply w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500;
+}
+
+.waitlist-button {
+  @apply mt-2 w-full rounded-lg bg-primary-600 px-4 py-2 font-semibold text-white transition-colors hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:bg-primary-700 dark:hover:bg-primary-600;
+}
